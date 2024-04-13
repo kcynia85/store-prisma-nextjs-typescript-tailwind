@@ -6,24 +6,44 @@ import {
   CardTitle,
 } from "@/components/ui/Card";
 
-// type DashboardCardProps = {
-//   title: string;
-//   subtitle: string;
-//   body: string;
-// };
 
-const DashboardCard = () => {
+const getSalesData = async () => {
+  // Call API and return data
+};
+
+const AdminDashboard = () => {
+  return (
+    <div className="
+      grid grid-cols-1 
+      md:grid-cols-2 
+      lg:grid-cols-3 
+      gap-4">
+      <DashboardCard
+        title="Orders"
+        subtitle="Last 24 Hours"
+        body="345"/>
+    </div>
+  );
+};
+
+type DashboardCardProps = {
+  title: string;
+  subtitle: string;
+  body: string;
+};
+
+const DashboardCard = ({title, subtitle, body}: DashboardCardProps) => {
   return  (
     <Card>
     <CardHeader>
-      <CardTitle>Sales</CardTitle>
-      <CardDescription>desc</CardDescription>
+      <CardTitle>{title}</CardTitle>
+      <CardDescription>{subtitle}</CardDescription>
     </CardHeader>
     <CardContent>
-      <p>Text</p>
+      <p>{body}</p>
     </CardContent>
   </Card>
   );
 };
 
-export default DashboardCard;
+export default AdminDashboard;
